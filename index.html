@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kinzbio · Fagoterapia para profesionales de la salud</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; }
+    ::selection { background: #C4591A; color: #fff; }
+
+    /* Accesibilidad: salto al contenido para usuarios de teclado/lector */
+    .skip-link {
+      position: absolute; left: 1rem; top: -100px;
+      background: #0D1117; color: #fff;
+      padding: .7rem 1.1rem; border-radius: 8px;
+      font-family: 'Space Mono', monospace; font-size: .85rem;
+      z-index: 1000; text-decoration: none;
+      transition: top .15s ease;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    /* Foco visible y consistente para navegación por teclado */
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid #C4591A;
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    /* Respeta a quienes prefieren menos movimiento */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+    }
+
+    /* ===== Layout responsive · enfoque mobile-first =====
+       Base (móvil): una sola columna, definida inline con data-cols="…".
+       Cada @media min-width AMPLÍA el layout en pantallas progresivamente mayores. */
+
+    /* Padding lateral compacto en móvil */
+    [data-screen-label] { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+    [data-screen-label="Hero"] { padding-top: 3rem !important; padding-bottom: 3.25rem !important; }
+
+    /* ≥ 700px · tablet: dos columnas — usamos @container para que el layout
+       responda al ancho REAL del brochure, no al viewport del iframe.
+       Esto evita que dentro de un iframe (Wix) los breakpoints no se activen. */
+    @container (min-width: 700px) {
+      [data-cols="two"],
+      [data-cols="three"],
+      [data-cols="four"]  { grid-template-columns: 1fr 1fr !important; }
+      [data-cols="split"] { grid-template-columns: auto 1fr !important; }
+    }
+
+    /* ≥ 980px · escritorio: layout completo */
+    @container (min-width: 980px) {
+      [data-screen-label] { padding-left: 2rem !important; padding-right: 2rem !important; }
+      [data-screen-label="Hero"] { padding-top: 5rem !important; padding-bottom: 5.5rem !important; }
+      [data-cols="hero"]  { grid-template-columns: 1.05fr .95fr !important; }
+      [data-cols="ram"]   { grid-template-columns: 1.15fr .85fr !important; }
+      [data-cols="two"]   { grid-template-columns: 1fr 1fr !important; }
+      [data-cols="three"] { grid-template-columns: repeat(3, 1fr) !important; }
+      [data-cols="four"]  { grid-template-columns: repeat(4, 1fr) !important; }
+    }
+  </style>
+</head>
+<body style="margin:0;">
+<div style="--accent:#6EC9A9; --pad:5rem; font-family:'Inter',system-ui,sans-serif; background:#F7F6F2; color:#0D1117; line-height:1.65; font-size:16px; -webkit-font-smoothing:antialiased; container-type:inline-size;">
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- ══ HERO ══ -->
+  <header data-screen-label="Hero" style="background:#0D1117; color:#fff; padding:5rem 2rem 5.5rem; position:relative; overflow:hidden;">
+    <div data-cols="hero" style="max-width:1060px; margin:0 auto; display:grid; grid-template-columns:1fr; gap:3rem; align-items:center;">
+      <div>
+        <img src="assets/kinzbio-logo.png" alt="Kinzbio" style="height:56px; width:auto; display:block; margin-bottom:1.6rem;">
+        <span style="font-family: 'Space Mono',monospace; font-size: 15px; letter-spacing: .14em; text-transform: uppercase; color: #C4591A; margin-bottom: 1.3rem; display: block">Kinzbio · Para profesionales de la salud</span>
+        <h1 style="font-family:'DM Serif Display',Georgia,serif; font-size:clamp(2.4rem,4.6vw,3.85rem); line-height:1.08; font-weight:400; color:#fff; margin:0 0 1.4rem;">Cuando los antibióticos ya no responden, <em style="font-style: italic; color: var(--accent,#6EC9A9);">la fagoterapia ofrece una nueva alternativa.</em></h1>
+        
+      </div>
+      <div style="display:flex; align-items:center; justify-content:center;">
+        <img src="assets/phage.png" alt="Microfotografía de un bacteriófago" style="width:100%; max-width:400px; height:auto; display:block; mix-blend-mode:lighten;">
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+  <!-- ══ INTRO STRIP · RAM ══ -->
+  <div data-screen-label="El problema RAM" style="background:#1B6B6B; color:#fff; padding:var(--pad,5rem) 2rem;">
+    <div data-cols="ram" style="max-width:1060px; margin:0 auto; display:grid; grid-template-columns:1fr; gap:3.5rem; align-items:center;">
+      <div>
+        <span style="font-family: 'Space Mono',monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent,#6EC9A9); margin-bottom: .7rem; display: block">El desafío clínico</span>
+        <h2 style="font-family:'DM Serif Display',Georgia,serif; font-size:clamp(1.7rem,3vw,2.4rem); line-height:1.2; font-weight:400; color:#fff; margin:0 0 1.2rem;">El problema que resuelve la fagoterapia</h2>
+        <p style="color:#D6EFEF; font-size:1.05rem; line-height:1.75; margin:0 0 1.1rem;">La resistencia antimicrobiana (RAM) es una emergencia sanitaria global. Hoy ya provoca más de 5 millones de muertes al año y la OMS proyecta que para 2050 será la primera causa de muerte en el mundo, superando al cáncer. Frente a un arsenal antibiótico que se agota y se renueva muy lentamente, <strong style="color:#fff;">los bacteriófagos ofrecen una vía completamente distinta</strong> para erradicar infecciones que son refractarias y difíciles de tratar.</p>
+        <p style="color:#D6EFEF; font-size:1.05rem; line-height:1.75; margin:0;"><b>La fagoterapia personalizada es una herramienta clínica disponible hoy en Uruguay y la región para infecciones bacterianas refractarias a los antibióticos.</b></p>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <svg viewBox="0 0 470 360" style="width:100%; max-width:470px; height:auto;" xmlns="http://www.w3.org/2000/svg" aria-label="Diagrama de Venn: resistencia antimicrobiana e infecciones por biofilm">
+          <circle cx="165" cy="180" r="155" fill="#6EC9A9" fill-opacity="0.42" stroke="#6EC9A9" stroke-width="2"></circle>
+          <circle cx="305" cy="180" r="155" fill="#C4591A" fill-opacity="0.46" stroke="#E8730C" stroke-width="2"></circle>
+          <text x="92" y="176" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="18" font-weight="600">Resistencia</text>
+          <text x="92" y="199" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="18" font-weight="600">antimicrobiana</text>
+          <text x="92" y="220" text-anchor="middle" fill="#D6EFEF" font-family="'Space Mono',monospace" font-size="14">(RAM)</text>
+          <text x="378" y="176" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="18" font-weight="600">Infecciones</text>
+          <text x="378" y="199" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="18" font-weight="600">por biofilm</text>
+          <text x="235" y="169" text-anchor="middle" fill="#0D1117" font-family="Inter,sans-serif" font-size="15" font-weight="700">Donde la</text>
+          <text x="235" y="189" text-anchor="middle" fill="#0D1117" font-family="Inter,sans-serif" font-size="15" font-weight="700">fagoterapia</text>
+          <text x="235" y="209" text-anchor="middle" fill="#0D1117" font-family="Inter,sans-serif" font-size="15" font-weight="700">aporta más</text>
+          <text x="235" y="229" text-anchor="middle" fill="#0D1117" font-family="Inter,sans-serif" font-size="15" font-weight="700">valor</text>
+        </svg>
+        <p style="color:#A8D8D8; font-size:.95rem; line-height:1.6; font-family:'Space Mono',monospace; letter-spacing:.04em; text-align:center; margin:1.2rem 0 0; max-width:36ch;">Patógenos multirresistentes que además forman biofilms: el escenario de mayor fracaso antibiótico.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ QUÉ ES UN FAGO ══ -->
+  <section data-screen-label="Qué es la fagoterapia" style="max-width:1060px; margin:0 auto; padding:var(--pad,5rem) 2rem;">
+    
+    <h2 style="font-family:'DM Serif Display',Georgia,serif; font-size:clamp(1.9rem,3.4vw,2.7rem); line-height:1.15; font-weight:400; color:#0D1117; margin:0;">¿Qué es un bacteriófago (o fago) y cuál es su efecto terapéutico?</h2>
+    <div data-cols="two" style="display:grid; grid-template-columns:1fr; gap:4rem; align-items:start; margin-top:1.5rem;">
+      <div>
+        <p style="color:#2C3542; font-size:.975rem; margin:0 0 1rem;">Los bacteriófagos (o "fagos") son virus que existen en la naturaleza con un único propósito: infectar y destruir bacterias. Llevan haciéndolo más de 3.000 millones de años y forman parte de nuestro microbioma sin causarnos daño.</p>
+        <p style="color:#2C3542; font-size:.975rem; margin:0 0 1rem;">Son los organismos más abundantes y diversos del planeta —se estima que existen más fagos que todas las demás formas de vida combinadas— lo que representa un reservorio prácticamente infinito de opciones antimicrobianas. Además, co-evolucionan permanentemente con las bacterias que infectan, ofreciendo siempre alternativas adaptadas a la epidemiología actual y a la aparición de nuevas resistencias.</p>
+        <p style="color:#2C3542; font-size:.975rem; margin:0 0 1rem;">La fagoterapia consiste en seleccionar, caracterizar y administrar fagos específicamente activos contra la cepa bacteriana que afecta a un paciente determinado. A diferencia de los antibióticos —moléculas químicas estáticas— los fagos son <em>sistemas biológicos y adaptativos</em>.</p>
+        <p style="color:#2C3542; font-size:.975rem; margin:0;">La plataforma de Kinzbio convierte este fenómeno natural en un proceso reproducible, caracterizado y regulado, con tiempos de entrega de días.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1rem;">
+        <div style="background:#fff; border:1px solid #D8D5CE; border-left:4px solid #1B6B6B; padding:1.1rem 1.3rem; border-radius:0 6px 6px 0;">
+          <h4 style="font-family:'Inter',sans-serif; font-weight:600; font-size:.92rem; color:#1B6B6B; margin:0 0 .3rem;">Precisión absoluta</h4>
+          <p style="font-size:.88rem; color:#4A5568; margin:0;">Cada fago reconoce receptores específicos de la bacteria diana. No afecta a bacterias comensales ni al microbioma del paciente.</p>
+        </div>
+        <div style="background:#fff; border:1px solid #D8D5CE; border-left:4px solid #1B6B6B; padding:1.1rem 1.3rem; border-radius:0 6px 6px 0;">
+          <h4 style="font-family:'Inter',sans-serif; font-weight:600; font-size:.92rem; color:#1B6B6B; margin:0 0 .3rem;">Autolimitación</h4>
+          <p style="font-size:.88rem; color:#4A5568; margin:0;">El fago se replica mientras exista su bacteria diana. Al erradicarla, se degrada naturalmente. No persiste ni genera carga ambiental.</p>
+        </div>
+        <div style="background:#fff; border:1px solid #D8D5CE; border-left:4px solid #1B6B6B; padding:1.1rem 1.3rem; border-radius:0 6px 6px 0;">
+          <h4 style="font-family:'Inter',sans-serif; font-weight:600; font-size:.92rem; color:#1B6B6B; margin:0 0 .3rem;">Co-evolución frente a la resistencia</h4>
+          <p style="font-size:.88rem; color:#4A5568; margin:0;">Si la bacteria desarrolla resistencia al fago, se identifica y administra un nuevo fago adaptado. Esta capacidad de actualización en tiempo real no es posible con antibióticos convencionales.</p>
+        </div>
+        <div style="background:#fff; border:1px solid #D8D5CE; border-left:4px solid #1B6B6B; padding:1.1rem 1.3rem; border-radius:0 6px 6px 0;">
+          <h4 style="font-family:'Inter',sans-serif; font-weight:600; font-size:.92rem; color:#1B6B6B; margin:0 0 .3rem;">Acción sobre <i>biofilms</i></h4>
+          <p style="font-size:.88rem; color:#4A5568; margin:0;">Los fagos penetran y desorganizan <i>biofilms</i> bacterianos —una de las causas más frecuentes de fracaso antibiótico en infecciones protésicas y crónicas.</p>
+        </div>
+        <div style="background:#fff; border:1px solid #D8D5CE; border-left:4px solid #1B6B6B; padding:1.1rem 1.3rem; border-radius:0 6px 6px 0;">
+          <h4 style="font-family:'Inter',sans-serif; font-weight:600; font-size:.92rem; color:#1B6B6B; margin:0 0 .3rem;">Biodegradable y seguro</h4>
+          <p style="font-size:.88rem; color:#4A5568; margin:0;">Sin toxicidad sistémica relevante. En todos los pacientes tratados por Kinzbio hasta la fecha no se han reportado efectos adversos significativos, en línea con reportes internacionales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr style="border:none; border-top:1px solid #D8D5CE; margin:0 2rem;">
+
+  <!-- ══ PIPELINE ══ -->
+  <div data-screen-label="Cómo funciona" style="background:#0D1117;">
+    <section style="max-width:1060px; margin:0 auto; padding:var(--pad,5rem) 2rem; color:#fff;">
+      <span style="font-family: 'Space Mono',monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent,#6EC9A9); margin-bottom: .6rem; display: block">EL PROCESO DE KINZBIO</span>
+      <h2 style="font-family:'DM Serif Display',Georgia,serif; font-size:clamp(1.7rem,3vw,2.4rem); line-height:1.2; font-weight:400; color:#fff; margin:0 0 .5rem;">De la muestra bacteriana al tratamiento en días</h2>
+      <p style="color: #8A95A3; margin: .5rem 0 0; max-width: 800px;">El médico tratante se contacta con nuestro equipo médico, se envía el aislado bacteriano del paciente, y se activa nuestra plataforma propietaria de caracterización, selección y manufactura.</p>
+
+      <div data-cols="four" style="display:grid; grid-template-columns:1fr; gap:1.5rem; margin-top:3rem;">
+        <div style="text-align:center;">
+          <div style="width:3.85rem; height:3.85rem; background:#C4591A; color:#fff; font-family:'Space Mono',monospace; font-size:1.1rem; font-weight:700; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem;">01</div>
+          <h4 style="color:#fff; font-size:1.12rem; font-weight:600; margin:0 0 .45rem;">Solicitud</h4>
+          <p style="color:#8A95A3; font-size:.95rem; line-height:1.6; margin:0;">El médico solicita el tratamiento y envía la cepa del paciente y antecedentes clínicos relevantes</p>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:3.85rem; height:3.85rem; background:#C4591A; color:#fff; font-family:'Space Mono',monospace; font-size:1.1rem; font-weight:700; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem;">02</div>
+          <h4 style="color:#fff; font-size:1.12rem; font-weight:600; margin:0 0 .45rem;">Caracterización</h4>
+          <p style="color:#8A95A3; font-size:.95rem; line-height:1.6; margin:0;">Fenotipado, genómica y bioinformática para identificar el fago óptimo del biobanco.</p>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:3.85rem; height:3.85rem; background:#C4591A; color:#fff; font-family:'Space Mono',monospace; font-size:1.1rem; font-weight:700; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem;">03</div>
+          <h4 style="color:#fff; font-size:1.12rem; font-weight:600; margin:0 0 .45rem;">Fabricación</h4>
+          <p style="color:#8A95A3; font-size:.95rem; line-height:1.6; margin:0;">Sistema de manufactura cerrado, escalable y descentralizado, con control de calidad integrado.</p>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:3.85rem; height:3.85rem; background:var(--accent,#6EC9A9); color:#0D1117; font-family:'Space Mono',monospace; font-size:1.1rem; font-weight:700; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem;">04</div>
+          <h4 style="color:#fff; font-size:1.12rem; font-weight:600; margin:0 0 .45rem;">Administración</h4>
+          <p style="color:#8A95A3; font-size:.95rem; line-height:1.6; margin:0;">Entrega al centro asistencial. Vías: nebulización, IV, intravesical, tópica, intraoperatoria, entre otras.</p>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:center; justify-content:center; gap:.8rem; margin-top:2.5rem; background:rgba(255,255,255,.06); padding:1rem 1.5rem; border-radius:8px; flex-wrap:wrap;">
+        <span style="font-family:'Space Mono',monospace; font-size:.75rem; color:var(--accent,#6EC9A9); letter-spacing:.1em; text-transform:uppercase;">Tiempo total</span>
+        <strong style="font-family:'DM Serif Display',Georgia,serif; font-size:1.5rem; color:#fff; font-weight:400;">5 – 15 días</strong>
+        <span style="font-family:'Space Mono',monospace; font-size:.75rem; color:var(--accent,#6EC9A9); letter-spacing:.1em; text-transform:uppercase;">desde el pedido</span>
+      </div>
+    </section>
+  </div>
+
+  <!-- ══ CUÁNDO USAR ══ -->
+  <section data-screen-label="Cuándo considerar" style="max-width:1060px; margin:0 auto; padding:var(--pad,5rem) 2rem;">
+    <span style="font-family: 'Space Mono',monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #C4591A; margin-bottom: .6rem; display: block">Indicaciones clínicas</span>
+    <h2 style="font-family:'DM Serif Display',Georgia,serif; font-size:clamp(1.7rem,3vw,2.4rem); line-height:1.2; font-weight:400; color:#0D1117; margin:0;">¿Cuándo considerar fagoterapia para su paciente?</h2>
+
+    <div data-cols="split" style="margin-top:2rem; background:#1B6B6B; border-radius:8px; padding:1.75rem 2rem; display:grid; grid-template-columns:1fr; gap:1.75rem; align-items:center;">
+      <div style="font-family:'DM Serif Display',Georgia,serif; font-size:2.4rem; color:var(--accent,#6EC9A9); line-height:1; flex-shrink:0;" aria-hidden="true">→</div>
+      <div>
+        <span style="font-family:'Space Mono',monospace; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent,#6EC9A9); display:block; margin-bottom:.5rem;">El escenario principal</span>
+        <p style="font-family:'DM Serif Display',Georgia,serif; font-size:1.3rem; font-weight:400; color:#fff; line-height:1.4; margin:0;">Ante cualquier escenario de infección bacteriana en el que la terapia antibiótica estándar haya evidenciado una eficacia limitada o nula, sin restringir esta condición a una causa de resistencia específica.</p>
+      </div>
+    </div>
+
+    <div data-cols="two" style="display:grid; grid-template-columns:1fr; gap:2rem; margin-top:2rem;">
+      <div style="background:#fff; border:1px solid #D8D5CE; border-top:3px solid #1B6B6B; border-radius:8px; padding:1.5rem;">
+        <span style="display:inline-block; font-size:.7rem; font-family:'Space Mono',monospace; letter-spacing:.1em; text-transform:uppercase; padding:.2rem .6rem; border-radius:3px; margin-bottom:.8rem; background:#E8F4F4; color:#1B6B6B;">Indicaciones con mayor evidencia</span>
+        <h4 style="font-weight:600; font-size:.95rem; color:#0D1117; margin:0 0 .6rem;">Escenarios donde la fagoterapia ha demostrado utilidad</h4>
+        <ul style="padding-left:1.2rem; margin:0;">
+          <li style="font-size:.88rem; color:#4A5568; margin-bottom:.35rem;">Infecciones por bacterias multirresistentes (MDR/XDR) sin opciones antibióticas efectivas</li>
+          <li style="font-size:.88rem; color:#4A5568; margin-bottom:.35rem;">Neumonía asociada a ventilación mecánica (VAP) refractaria</li>
+          <li style="font-size:.88rem; color:#4A5568; margin-bottom:.35rem;">Infecciones de prótesis articulares con biofilm</li>
+          <li style="font-size:.88rem; color:#4A5568; margin-bottom:.35rem;">Infecciones urinarias recurrentes con resistencia documentada</li>
+          <li style="font-size:.88rem; color:#4A5568; margin-bottom:.35rem;">Infecciones de tejidos blandos crónicas o recidivantes</li>
+          <li style="font-size:.88rem; color:#4A5568; margin-bottom:.35rem;">Infecciones crónicas en bronquiectasia o fibrosis quística</li>
+          <li style="font-size:.88rem; color:#4A5568; margin-bottom:.35rem;">Pacientes inmunocomprometidos con infecciones oportunistas graves</li>
+          <li style="font-size:.88rem; color:#4A5568; margin:0;">Pancreatitis complicada con sobreinfección bacteriana</li>
+        </ul>
+      </div>
+      <div style="background:#fff; border:1px solid #D8D5CE; border-top:3px solid #C4591A; border-radius:8px; padding:1.5rem;">
+        <span style="display:inline-block; font-size:.7rem; font-family:'Space Mono',monospace; letter-spacing:.1em; text-transform:uppercase; padding:.2rem .6rem; border-radius:3px; margin-bottom:.8rem; background:#FDF0E8; color:#C4591A;">Consideraciones a tener en cuenta</span>
+        <h4 style="font-weight:600; font-size:.95rem; color:#0D1117; margin:0 0 .6rem;">Aspectos prácticos para el clínico</h4>
+        <ul style="padding-left:1.2rem; margin:0;">
+          <li style="font-size:.88rem; color:#4A5568; margin-bottom:.35rem;">Se requiere un aislado bacteriano viable para la selección del fago</li>
+          <li style="font-size:.88rem; color:#4A5568; margin-bottom:.35rem;">No se aplica a microorganismos anaerobios (ej. <i>Clostridium</i>), intracelulares ni a infecciones por hongos</li>
+          <li style="font-size:.88rem; color:#4A5568; margin-bottom:.35rem;">Se recomienda combinar con antibióticos cuando sea posible (sinergia documentada)</li>
+          <li style="font-size:.88rem; color:#4A5568; margin-bottom:.35rem;">El tratamiento se tramita bajo acceso regulado por el Ministerio de Salud Pública</li>
+          <li style="font-size:.88rem; color:#4A5568; margin:0;">La evaluación y preparación toma entre 5 y 15 días desde la solicitud</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr style="border:none; border-top:1px solid #D8D5CE; margin:0 2rem;">
+
+  <!-- ══ CASOS CLÍNICOS ══ -->
+  
+  <div data-screen-label="Casos clínicos" style="background:#E8F4F4;">
+    <section style="max-width:1060px; margin:0 auto; padding:var(--pad,5rem) 2rem;">
+      <span style="font-family: 'Space Mono',monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #C4591A; margin-bottom: .6rem; display: block">Evidencia clínica</span>
+      <h2 style="font-family:'DM Serif Display',Georgia,serif; font-size:clamp(1.7rem,3vw,2.4rem); line-height:1.2; font-weight:400; color:#0D1117; margin:0;">Casos seleccionados tratados con fagoterapia por Kinzbio</h2>
+
+      <div style="display:flex; flex-direction:column; gap:2rem; margin-top:2.5rem;">
+
+        <article style="background:#fff; border:1px solid #D8D5CE; border-left:4px solid #1B6B6B; border-radius:0 8px 8px 0; overflow:hidden;">
+          <div style="padding:1.5rem 1.7rem;">
+            <div style="font-family:'Space Mono',monospace; font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:#6B7280; margin:0 0 .45rem;">Caso 01</div>
+            <h3 style="font-family:'DM Serif Display',Georgia,serif; font-size:1.18rem; font-weight:400; color:#0D1117; line-height:1.3; margin:0 0 .6rem;">Neumonía asociada a ventilación mecánica por <i>P. aeruginosa </i>XDR</h3>
+            <p style="font-size:.85rem; color:#4A5568; line-height:1.65; margin:0 0 1.1rem; max-width:74ch;">Paciente de 17 años con leucemia linfoblástica aguda. Infección XDR por <em>P. aeruginosa</em> refractaria a todos los antibióticos durante más de 6 meses. Traqueostomía y ventilación mecánica.</p>
+            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:.5rem;">
+              <li style="display:flex; gap:.6rem; align-items:flex-start; font-size:.85rem; color:#2C3542; line-height:1.55;"><span style="color:#1B6B6B; font-weight:700; flex-shrink:0;" aria-hidden="true">✓</span><span>Fagoterapia nebulizada — bien tolerada, sin efectos adversos</span></li>
+              <li style="display:flex; gap:.6rem; align-items:flex-start; font-size:.85rem; color:#2C3542; line-height:1.55;"><span style="color:#1B6B6B; font-weight:700; flex-shrink:0;" aria-hidden="true">✓</span><span>Carga bacteriana indetectable desde el día 4 de tratamiento</span></li>
+              <li style="display:flex; gap:.6rem; align-items:flex-start; font-size:.85rem; color:#2C3542; line-height:1.55;"><span style="color:#1B6B6B; font-weight:700; flex-shrink:0;" aria-hidden="true">✓</span><span>Curación microbiológica y mejoría clínica documentada</span></li>
+              <li style="display:flex; gap:.6rem; align-items:flex-start; font-size:.85rem; color:#2C3542; line-height:1.55;"><span style="color:#1B6B6B; font-weight:700; flex-shrink:0;" aria-hidden="true">✓</span><span>Retiro de traqueostomía y alta de UCI</span></li>
+              <li style="display:flex; gap:.6rem; align-items:flex-start; font-size:.85rem; color:#2C3542; line-height:1.55;"><span style="color:#1B6B6B; font-weight:700; flex-shrink:0;" aria-hidden="true">✓</span><span>Alta hospitalaria con remisión sostenida</span></li>
+            </ul>
+          </div>
+          <div style="background:#1B6B6B; color:#fff; padding:.95rem 1.7rem; display:flex; flex-wrap:wrap; align-items:baseline; gap:.4rem .9rem;">
+            <span style="font-family:'Space Mono',monospace; font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:#0D1117; background:var(--accent,#6EC9A9); padding:.22rem .55rem; border-radius:3px; align-self:center;">Resultado</span>
+            <span style="font-family:'DM Serif Display',Georgia,serif; font-size:1.1rem; color:#fff; line-height:1.2;">Cura microbiológica</span>
+            <span style="font-size:.8rem; color:#D6EFEF; line-height:1.45;">Bacteria indetectable al día 4 de tratamiento.</span>
+          </div>
+        </article>
+
+        <article style="background:#fff; border:1px solid #D8D5CE; border-left:4px solid #1B6B6B; border-radius:0 8px 8px 0; overflow:hidden;">
+          <div style="padding:1.5rem 1.7rem;">
+            <div style="font-family:'Space Mono',monospace; font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:#6B7280; margin:0 0 .45rem;">Caso 02</div>
+            <h3 style="font-family:'DM Serif Display',Georgia,serif; font-size:1.18rem; font-weight:400; color:#0D1117; line-height:1.3; margin:0 0 .6rem;">Infección de tejidos blandos faciales refractaria</h3>
+            <p style="font-size:.85rem; color:#4A5568; line-height:1.65; margin:0 0 1.1rem; max-width:74ch;">Paciente de 50 años, linfoma en remisión. Infección nasal recurrente con progresión a celulitis facial. Tres bacterias multirresistentes, secreción purulenta, edema palpebral. Múltiples hospitalizaciones durante 2 años.</p>
+            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:.5rem;">
+              <li style="display:flex; gap:.6rem; align-items:flex-start; font-size:.85rem; color:#2C3542; line-height:1.55;"><span style="color:#1B6B6B; font-weight:700; flex-shrink:0;" aria-hidden="true">✓</span><span>Tratamiento con spray nasal de fagos — 20 días</span></li>
+              <li style="display:flex; gap:.6rem; align-items:flex-start; font-size:.85rem; color:#2C3542; line-height:1.55;"><span style="color:#1B6B6B; font-weight:700; flex-shrink:0;" aria-hidden="true">✓</span><span>Cultivos negativos para todas las bacterias al finalizar</span></li>
+              <li style="display:flex; gap:.6rem; align-items:flex-start; font-size:.85rem; color:#2C3542; line-height:1.55;"><span style="color:#1B6B6B; font-weight:700; flex-shrink:0;" aria-hidden="true">✓</span><span>Resolución completa de celulitis y edema</span></li>
+              <li style="display:flex; gap:.6rem; align-items:flex-start; font-size:.85rem; color:#2C3542; line-height:1.55;"><span style="color:#1B6B6B; font-weight:700; flex-shrink:0;" aria-hidden="true">✓</span><span>Seguimiento a 4+ meses: sin bacterias, sin antibióticos</span></li>
+              <li style="display:flex; gap:.6rem; align-items:flex-start; font-size:.85rem; color:#2C3542; line-height:1.55;"><span style="color:#1B6B6B; font-weight:700; flex-shrink:0;" aria-hidden="true">✓</span><span>Retorno a vida cotidiana normal</span></li>
+            </ul>
+          </div>
+          <div style="background:#1B6B6B; color:#fff; padding:.95rem 1.7rem; display:flex; flex-wrap:wrap; align-items:baseline; gap:.4rem .9rem;">
+            <span style="font-family:'Space Mono',monospace; font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:#0D1117; background:var(--accent,#6EC9A9); padding:.22rem .55rem; border-radius:3px; align-self:center;">Resultado</span>
+            <span style="font-family:'DM Serif Display',Georgia,serif; font-size:1.1rem; color:#fff; line-height:1.2;">Cura microbiológica</span>
+            <span style="font-size:.8rem; color:#D6EFEF; line-height:1.45;">Bacteria indetectable al día 20, tras 2 años de infección refractaria.</span>
+          </div>
+        </article>
+
+        <article style="background:#fff; border:1px solid #D8D5CE; border-left:4px solid #1B6B6B; border-radius:0 8px 8px 0; overflow:hidden;">
+          <div style="padding:1.5rem 1.7rem;">
+            <div style="font-family:'Space Mono',monospace; font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:#6B7280; margin:0 0 .45rem;">Caso 03</div>
+            <h3 style="font-family:'DM Serif Display',Georgia,serif; font-size:1.18rem; font-weight:400; color:#0D1117; line-height:1.3; margin:0 0 .6rem;">Infección periprotésica polimicrobiana recurrente</h3>
+            <p style="font-size:.85rem; color:#4A5568; line-height:1.65; margin:0 0 1.1rem; max-width:74ch;">Paciente de 89 años, prótesis bilateral de cadera. Infección recurrente por <em>SAMS</em>, con reinfección posterior por <em>K. pneumoniae</em> y <em>A. baumannii</em> BLEE. Múltiples cirugías y ciclos antibióticos sin resolución.</p>
+            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:.5rem;">
+              <li style="display:flex; gap:.6rem; align-items:flex-start; font-size:.85rem; color:#2C3542; line-height:1.55;"><span style="color:#1B6B6B; font-weight:700; flex-shrink:0;" aria-hidden="true">✓</span><span>Fagoterapia aplicada durante cirugía de debridamiento protésico</span></li>
+              <li style="display:flex; gap:.6rem; align-items:flex-start; font-size:.85rem; color:#2C3542; line-height:1.55;"><span style="color:#1B6B6B; font-weight:700; flex-shrink:0;" aria-hidden="true">✓</span><span>Tratamiento adicional vía catéter post-operatorio</span></li>
+              <li style="display:flex; gap:.6rem; align-items:flex-start; font-size:.85rem; color:#2C3542; line-height:1.55;"><span style="color:#1B6B6B; font-weight:700; flex-shrink:0;" aria-hidden="true">✓</span><span>Erradicación de todos los patógenos documentada</span></li>
+              <li style="display:flex; gap:.6rem; align-items:flex-start; font-size:.85rem; color:#2C3542; line-height:1.55;"><span style="color:#1B6B6B; font-weight:700; flex-shrink:0;" aria-hidden="true">✓</span><span>Evolución favorable sin complicaciones</span></li>
+            </ul>
+          </div>
+          <div style="background:#1B6B6B; color:#fff; padding:.95rem 1.7rem; display:flex; flex-wrap:wrap; align-items:baseline; gap:.4rem .9rem;">
+            <span style="font-family:'Space Mono',monospace; font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:#0D1117; background:var(--accent,#6EC9A9); padding:.22rem .55rem; border-radius:3px; align-self:center;">Resultado</span>
+            <span style="font-family:'DM Serif Display',Georgia,serif; font-size:1.1rem; color:#fff; line-height:1.2;">Cura microbiológica</span>
+            <span style="font-size:.8rem; color:#D6EFEF; line-height:1.45;">Tras tratamiento contra tres patógenos en instancias independientes.</span>
+          </div>
+        </article>
+
+      </div>
+
+      <p style="margin-top:1.5rem; font-size:.82rem; color:#6B7280;">Publicación del caso 1 disponible en: <a href="https://www.researchsquare.com/article/rs-7802317/v1" target="_blank" rel="noopener" style="color:#1B6B6B; font-weight:600; text-decoration:underline;">researchsquare.com/article/rs-7802317/v1</a> · Los demás casos forman parte de la base clínica interna de Kinzbio. Se obtuvo consentimiento informado en todos los pacientes.</p>
+    </section>
+  </div>
+  
+
+  <hr style="border:none; border-top:1px solid #D8D5CE; margin:0 2rem;">
+
+  <!-- ══ TRACCIÓN ══ -->
+  <section data-screen-label="Kinzbio en cifras" style="max-width:1060px; margin:0 auto; padding:var(--pad,5rem) 2rem;">
+    <span style="font-family: 'Space Mono',monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #C4591A; margin-bottom: .6rem; display: block">Progreso clínico y comercial</span>
+    <h2 style="font-family:'DM Serif Display',Georgia,serif; font-size:clamp(1.7rem,3vw,2.4rem); line-height:1.2; font-weight:400; color:#0D1117; margin:0;">Kinzbio en cifras</h2>
+
+    <div data-cols="three" style="display:grid; grid-template-columns:1fr; gap:1.5rem; margin-top:2.5rem;">
+      <div style="background:#0D1117; color:#fff; border-radius:8px; padding:1.8rem;">
+        <span style="font-family:'DM Serif Display',Georgia,serif; font-size:2.8rem; color:var(--accent,#6EC9A9); display:block; line-height:1; margin-bottom:.4rem;">+20</span>
+        <span style="font-size:.82rem; color:#B8C0CC; line-height:1.5;">Pacientes tratados en múltiples centros hospitalarios de Uruguay y Chile.</span>
+      </div>
+      <div style="background:#0D1117; color:#fff; border-radius:8px; padding:1.8rem;">
+        <span style="font-family:'DM Serif Display',Georgia,serif; font-size:2.8rem; color:#C4591A; display:block; line-height:1; margin-bottom:.4rem;">+95%</span>
+        <span style="font-size:.82rem; color:#B8C0CC; line-height:1.5;">Tasa de mejoría clínica documentada. Cero efectos adversos reportados a la fecha.</span>
+      </div>
+      <div style="background:#0D1117; color:#fff; border-radius:8px; padding:1.8rem;">
+        <span style="font-family:'DM Serif Display',Georgia,serif; font-size:2.8rem; color:var(--accent,#6EC9A9); display:block; line-height:1; margin-bottom:.4rem;">+25</span>
+        <span style="font-size:.82rem; color:#B8C0CC; line-height:1.5;">Solicitudes de tratamiento recibidas solo en febrero de 2026.</span>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem; background:#fff; border:1px solid #D8D5CE; border-radius:8px; padding:1.5rem 2rem;">
+      <h3 style="font-family:'Inter',sans-serif; font-size:1.05rem; font-weight:600; letter-spacing:.02em; text-transform:uppercase; color:#1B6B6B; margin:0 0 1rem;">Indicaciones abordadas con éxito</h3>
+      <div style="display:flex; flex-wrap:wrap; gap:.5rem .6rem;">
+        <span style="font-size:.82rem; color:#1B6B6B; background:#E8F4F4; padding:.3rem .8rem; border-radius:20px;">Neumonía por VAP</span>
+        <span style="font-size:.82rem; color:#1B6B6B; background:#E8F4F4; padding:.3rem .8rem; border-radius:20px;">Fibrosis quística</span>
+        <span style="font-size:.82rem; color:#1B6B6B; background:#E8F4F4; padding:.3rem .8rem; border-radius:20px;">Bronquiectasia</span>
+        <span style="font-size:.82rem; color:#1B6B6B; background:#E8F4F4; padding:.3rem .8rem; border-radius:20px;">Infección periprotésica</span>
+        <span style="font-size:.82rem; color:#1B6B6B; background:#E8F4F4; padding:.3rem .8rem; border-radius:20px;">Pancreatitis complicada</span>
+        <span style="font-size:.82rem; color:#1B6B6B; background:#E8F4F4; padding:.3rem .8rem; border-radius:20px;">ITU recurrente complicada</span>
+        <span style="font-size:.82rem; color:#1B6B6B; background:#E8F4F4; padding:.3rem .8rem; border-radius:20px;">Infección de tejidos blandos</span>
+      </div>
+    </div>
+  </section>
+
+  <hr style="border:none; border-top:1px solid #D8D5CE; margin:0 2rem;">
+
+  <!-- ══ REGULATORIO ══ -->
+  <section data-screen-label="Estado regulatorio" style="max-width:1060px; margin:0 auto; padding:var(--pad,5rem) 2rem;">
+    <span style="font-family: 'Space Mono',monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #C4591A; margin-bottom: .6rem; display: block">ESTADO REGULATORIO Y COMERCIAL</span>
+    <h2 style="font-family:'DM Serif Display',Georgia,serif; font-size:clamp(1.7rem,3vw,2.4rem); line-height:1.2; font-weight:400; color:#0D1117; margin:0;">Acceso al tratamiento en América Latina</h2>
+    <p style="max-width:620px; margin:.7rem 0 0; color:#2C3542; font-size:.975rem;">Kinzbio opera dentro de marcos regulatorios formales. La fagoterapia personalizada, al encuadrarse como medicamento de uso individualizado, puede accederse por vías especiales sin esperar la aprobación como medicamento convencional.</p>
+
+    <div data-cols="three" style="display:grid; grid-template-columns:1fr; gap:1.5rem; margin-top:2.5rem;">
+      <div style="border:1px solid #D8D5CE; border-top:3px solid #1B6B6B; border-radius:8px; padding:1.5rem; background:#fff;">
+        <div style="font-size:1.8rem; margin-bottom:.6rem" aria-hidden="true">🇺🇾</div>
+        <h4 style="font-weight:600; font-size:.95rem; color:#0D1117; margin:0 0 .4rem;">Uruguay — Aprobado</h4>
+        <p style="font-size:.85rem; color:#4A5568; line-height:1.6; margin:0;">Kinzbio es la primera y única empresa autorizada por el Ministerio de Salud Pública para realizar fagoterapia personalizada en Uruguay. Bajo&nbsp;Ord Min No 1162-2024 firmada en diciembre de 2024.</p>
+      </div>
+      <div style="border:1px solid #D8D5CE; border-top:3px solid #C4591A; border-radius:8px; padding:1.5rem; background:#fff;">
+        <div style="font-size:1.8rem; margin-bottom:.6rem" aria-hidden="true">🇧🇷</div>
+        <h4 style="font-weight:600; font-size:.95rem; color:#0D1117; margin:0 0 .4rem;">Brasil — En tramitación</h4>
+        <p style="font-size:.85rem; color:#4A5568; line-height:1.6; margin:0;">Expediente presentado ante ANVISA para habilitación. Brasil sería el segundo mercado latinoamericano en contar con autorización formal.</p>
+      </div>
+      <div style="border:1px solid #D8D5CE; border-radius:8px; padding:1.5rem; background:#fff;">
+        <div style="font-size:1.8rem; margin-bottom:.6rem" aria-hidden="true">🌎</div>
+        <h4 style="font-weight:600; font-size:.95rem; color:#0D1117; margin:0 0 .4rem;">Chile, Argentina, Paraguay</h4>
+        <p style="font-size:.85rem; color:#4A5568; line-height:1.6; margin:0;">Acceso a través de la alianza comercial con Scienza. Se utilizan vías de uso compasivo / acceso anticipado donde el marco regulatorio aún está en desarrollo.</p>
+      </div>
+    </div>
+
+    <!-- Scienza · socio estratégico comercial -->
+    <div data-cols="split" style="margin-top:1.5rem; background:#0D1117; border-radius:8px; padding:2rem; display:grid; grid-template-columns:1fr; gap:2rem; align-items:center;">
+      <div style="display:flex; align-items:center; justify-content:center; background:#fff; border-radius:8px; padding:1rem 1.4rem; width:160px;">
+        <img src="assets/logos/scienza.jpg" alt="Scienza" style="width:100%; height:auto; display:block; border-radius:4px;">
+      </div>
+      <div>
+        <span style="font-family:'Space Mono',monospace; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent,#6EC9A9); display:block; margin-bottom:.5rem;">Socio estratégico comercial</span>
+        <h3 style="font-family:'DM Serif Display',Georgia,serif; font-size:1.45rem; font-weight:400; color:#fff; margin:0 0 .6rem; line-height:1.25;">Scienza lidera la distribución y comercialización de la fagoterapia</h3>
+        <p style="font-size:.9rem; color:#B8C0CC; line-height:1.65; margin:0; max-width:62ch;">A través de una alianza estratégica con <strong style="color: rgb(255, 255, 255);">Scienza</strong> —compañía farmacéutica líder en logística y acceso a terapias especializadas en América Latina— Kinzbio asegura la distribución y comercialización del tratamiento en Uruguay y la región. Esta colaboración conecta la plataforma científica de Kinzbio con una red consolidada de acceso hospitalario, cobertura y soporte al paciente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PARTNERS ══ -->
+  <div data-screen-label="Centros con acceso" style="background:#fff; border-top:1px solid #D8D5CE; border-bottom:1px solid #D8D5CE; padding:2.5rem 2rem;">
+    <div style="max-width:1060px; margin:0 auto;">
+      <p style="font-size:.85rem; color:#6B7280; margin:0 0 1.2rem; font-family:'Space Mono',monospace; text-transform:uppercase; letter-spacing:.1em;">Hospitales y centros con acceso activo</p>
+      <div style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center;">
+        <div style="display:flex; align-items:center; justify-content:center; height:72px; padding:.6rem 1.2rem; background:#fff; border:1px solid #D8D5CE; border-radius:6px;"><img src="assets/logos/banco-protesis.png" alt="Banco de Prótesis" style="max-height:38px; max-width:150px; width:auto; object-fit:contain; display:block;"></div>
+        <div style="display:flex; align-items:center; justify-content:center; height:72px; padding:.6rem 1.2rem; background:#fff; border:1px solid #D8D5CE; border-radius:6px;"><img src="assets/logos/asse.jpg" alt="ASSE Salud" style="max-height:54px; max-width:90px; width:auto; object-fit:contain; display:block;"></div>
+        <div style="display:flex; align-items:center; justify-content:center; height:72px; padding:.6rem 1.2rem; background:#fff; border:1px solid #D8D5CE; border-radius:6px;"><img src="assets/logos/sanatorio-americano.jpg" alt="Sanatorio Americano" style="max-height:56px; max-width:120px; width:auto; object-fit:contain; display:block;"></div>
+        <div style="display:flex; align-items:center; justify-content:center; height:72px; padding:.6rem 1.2rem; background:#fff; border:1px solid #D8D5CE; border-radius:6px;"><img src="assets/logos/casmu.png" alt="CASMU" style="max-height:40px; max-width:150px; width:auto; object-fit:contain; display:block;"></div>
+        <div style="display:flex; align-items:center; justify-content:center; height:72px; padding:.6rem 1.2rem; background:#fff; border:1px solid #D8D5CE; border-radius:6px;"><img src="assets/logos/britanico.jpeg" alt="Hospital Británico" style="max-height:56px; max-width:90px; width:auto; object-fit:contain; display:block;"></div>
+        <div style="display:flex; align-items:center; justify-content:center; height:72px; padding:.6rem 1.2rem; background:#fff; border:1px solid #D8D5CE; border-radius:6px;"><img src="assets/logos/sanidad-ffaa.jpg" alt="Dirección Nacional de Sanidad de las Fuerzas Armadas" style="max-height:60px; max-width:150px; width:auto; object-fit:contain; display:block;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CTA ══ -->
+  <div data-screen-label="Contacto" style="background:#C4591A; color:#fff; padding:4rem 2rem; text-align:center;">
+    <h2 style="font-family:'DM Serif Display',Georgia,serif; font-size:clamp(1.7rem,3vw,2.4rem); line-height:1.2; font-weight:400; color:#fff; margin:0 0 1rem;">¿Tiene un paciente candidato?</h2>
+    <p style="color:rgba(255,255,255,.88); font-size:1.05rem; max-width:560px; margin:0 auto 2rem;">El equipo médico y científico de Kinzbio evalúa cada caso de forma individualizada. El primer paso es contactarse directamente con el equipo de Kinzbio o Scienza para comenzar el proceso.</p>
+    <div style="display:flex; gap:2.5rem 3rem; justify-content:center; flex-wrap:wrap;">
+      <div style="text-align:center;">
+        <a href="mailto:info@kinzbio.com" style="color:#fff; text-decoration:none; font-weight:600; font-size:1rem;">info@kinzbio.com</a>
+        <small style="display:block; font-size:.78rem; opacity:.78; margin-top:.2rem; font-family:'Space Mono',monospace;">Equipo Kinzbio</small>
+      </div>
+      <div style="text-align:center;">
+        <a href="mailto:medical@scienza.com.uy" style="color:#fff; text-decoration:none; font-weight:600; font-size:1rem; display:inline-flex; align-items:center; gap:.45rem;"><span style="font-size:1.15rem;" aria-hidden="true">🇺🇾</span>medical@scienza.com.uy</a>
+        <small style="display:block; font-size:.78rem; opacity:.78; margin-top:.2rem; font-family:'Space Mono',monospace;">Scienza Uruguay</small>
+      </div>
+      <div style="text-align:center;">
+        <a href="mailto:info@scienza.cl" style="color:#fff; text-decoration:none; font-weight:600; font-size:1rem; display:inline-flex; align-items:center; gap:.45rem;"><span style="font-size:1.15rem;" aria-hidden="true">🇨🇱</span>info@scienza.cl</a>
+        <small style="display:block; font-size:.78rem; opacity:.78; margin-top:.2rem; font-family:'Space Mono',monospace;">Scienza Chile</small>
+      </div>
+      <div style="text-align:center;">
+        <a href="https://kinzbio.com" target="_blank" style="color:#fff; text-decoration:none; font-weight:600; font-size:1rem;">kinzbio.com</a>
+        <small style="display:block; font-size:.78rem; opacity:.78; margin-top:.2rem; font-family:'Space Mono',monospace;">Más información</small>
+      </div>
+      <div style="text-align:center;">
+        <a href="tel:+59898106809" style="color:#fff; text-decoration:none; font-weight:600; font-size:1rem;">+598 98 10 68 09</a>
+        <small style="display:block; font-size:.78rem; opacity:.78; margin-top:.2rem; font-family:'Space Mono',monospace;">Consultas por WhatsApp</small>
+      </div>
+    </div>
+  </div>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer style="background:#0D1117; color:#6B7280; padding:2rem; text-align:center; font-size:.8rem; font-family:'Space Mono',monospace;">
+    <img src="assets/kinzbio-logo.png" alt="Kinzbio" style="height:56px; width:auto; display:block; margin:0 auto 1.2rem;">
+    <p style="margin:0;">© 2026 Kinzbio · 6201 Avenida Italia, Edificio Los Tilos, Montevideo 11500, Uruguay · kinzbio.com</p>
+    <p style="margin: .4rem 0 0; font-size: .72rem; opacity: .6; color: #C3C7D0">Material informativo para profesionales de la salud. No constituye indicación clínica. Para casos específicos consulte con el equipo de Kinzbio.</p>
+  </footer>
+
+</div>
+
+<script>
+/* Reporta la altura real del contenido al contenedor (Wix) para que el
+   iframe crezca y NO haya scroll interno. Requiere el elemento "Insertar HTML"
+   (HtmlComponent) + el código Velo indicado en la documentación. */
+(function () {
+  function sendHeight() {
+    var h = Math.max(
+      document.documentElement.scrollHeight,
+      document.body ? document.body.scrollHeight : 0
+    );
+    // Formato objeto (para onMessage de Velo) y número plano (por compatibilidad)
+    parent.postMessage({ type: 'kinzbio-height', height: h }, '*');
+    parent.postMessage(h, '*');
+  }
+
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  // Reenvía tras cargar fuentes/imágenes (que cambian la altura)
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(sendHeight);
+  Array.prototype.forEach.call(document.images, function (img) {
+    if (!img.complete) img.addEventListener('load', sendHeight);
+  });
+  // Observa cambios de layout posteriores
+  if (window.ResizeObserver) {
+    new ResizeObserver(sendHeight).observe(document.documentElement);
+  }
+  setTimeout(sendHeight, 300);
+  setTimeout(sendHeight, 1500);
+})();
+</script>
+</body>
+</html>
