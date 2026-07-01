@@ -439,5 +439,36 @@
   </footer>
 
 </div>
+
+<script>
+/* Reporta la altura real del contenido al contenedor (Wix) para que el
+   iframe crezca y NO haya scroll interno. Requiere el elemento "Insertar HTML"
+   (HtmlComponent) + el código Velo indicado en la documentación. */
+(function () {
+  function sendHeight() {
+    var h = Math.max(
+      document.documentElement.scrollHeight,
+      document.body ? document.body.scrollHeight : 0
+    );
+    // Formato objeto (para onMessage de Velo) y número plano (por compatibilidad)
+    parent.postMessage({ type: 'kinzbio-height', height: h }, '*');
+    parent.postMessage(h, '*');
+  }
+
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  // Reenvía tras cargar fuentes/imágenes (que cambian la altura)
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(sendHeight);
+  Array.prototype.forEach.call(document.images, function (img) {
+    if (!img.complete) img.addEventListener('load', sendHeight);
+  });
+  // Observa cambios de layout posteriores
+  if (window.ResizeObserver) {
+    new ResizeObserver(sendHeight).observe(document.documentElement);
+  }
+  setTimeout(sendHeight, 300);
+  setTimeout(sendHeight, 1500);
+})();
+</script>
 </body>
 </html>
